@@ -1,0 +1,82 @@
+services:
+  db:
+    image: mysql:8
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: ./docker/wordpress/Dockerfile
+      args:
+        - UID=${UID}
+        - GID=${GID}
+    user: "${UID}:${GID}"
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: on-failure
+    env_file:
+      - .env
+    volumes:
+      - ./public:/var/www/html
+
+  wp-cli:
+    profiles:
+      - dev
+    image: wordpress:cli-php8.2
+    user: "${UID}:${GID}"
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: no
+    env_file:
+      - .env
+    volumes:
+      - ./public:/app
+    working_dir: /app
+
+  composer:
+    profiles:
+      - dev
+    build:
+      context: .
+      dockerfile: ./docker/composer/Dockerfile
+    user: "${UID}:${GID}"
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: on-failure
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: ${DB_HOST}
+      MYSQL_ROOT_PASSWORD: root
+      PMA_USER: ${DB_USER}
+      PMA_PASSWORD: ${DB_PASSWORD}
+      UPLOAD_LIMIT: 50M
+
+  node:
+    profiles:
+      - dev
+    image: node:20
+    user: node
+    ports:
+      - "5173:5173"
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+volumes:
+  db_data: {}

@@ -1,0 +1,56 @@
+$color-white: #fff;
+$color-black: #000;
+$color-blue: #00baff;
+$color-green: #41dc32;
+$color-grey: #36363b;
+$color-pink: #fab3ff;
+$color-red: #f53246;
+$color-teal: #00fdff;
+$color-yellow: #ffdc41;
+$color-ui: #d9d9d9;
+
+@include setvars(
+  (
+    'white': $color-white,
+    'black': $color-black,
+    'blue': $color-blue,
+    'green': $color-green,
+    'grey': $color-grey,
+    'pink': $color-pink,
+    'red': $color-red,
+    'teal': $color-teal,
+    'yellow': $color-yellow,
+    'ui': $color-ui,
+  ),
+  'color'
+);
+
+/*
+RGB values.
+*/
+$color-rgb-white: getrgb($color-white);
+$color-rgb-black: getrgb($color-black);
+$color-rgb-blue: getrgb($color-blue);
+$color-rgb-green: getrgb($color-green);
+$color-rgb-grey: getrgb($color-grey);
+$color-rgb-pink: getrgb($color-pink);
+$color-rgb-red: getrgb($color-red);
+$color-rgb-teal: getrgb($color-teal);
+$color-rgb-yellow: getrgb($color-yellow);
+$color-rgb-ui: getrgb($color-ui);
+
+@include setvars(
+  (
+    'white': $color-rgb-white,
+    'black': $color-rgb-black,
+    'blue': $color-rgb-blue,
+    'green': $color-rgb-green,
+    'grey': $color-rgb-grey,
+    'pink': $color-rgb-pink,
+    'red': $color-rgb-red,
+    'teal': $color-rgb-teal,
+    'yellow': $color-rgb-yellow,
+    'ui': $color-rgb-ui,
+  ),
+  'color-rgb'
+);

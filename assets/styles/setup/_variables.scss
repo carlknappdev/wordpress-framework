@@ -1,0 +1,23 @@
+@mixin setvars($variables, $prefix: pf) {
+  :root {
+    @each $name, $value in $variables {
+      --#{$prefix}--#{$name}: #{$value};
+    }
+  }
+}
+
+@function getvar($name, $prefix: pf) {
+  @return var(--#{$prefix}--#{$name});
+}
+
+@function getrgb($color) {
+  @return #{red($color)} + ' ' + #{green($color)} + ' ' + #{blue($color)};
+}
+
+@function getcolor($name) {
+  @return getvar($name, 'color');
+}
+
+@function getcolorrgb($name) {
+  @return getvar($name, 'color-rgb');
+}

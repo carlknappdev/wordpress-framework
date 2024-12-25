@@ -1,0 +1,16 @@
+parameters:
+    level: 5
+    paths:
+        - src/
+        - public/
+        - config/
+    excludePaths:
+        - vendor/*
+        - public/app/mu-plugins/
+        - public/app/plugins/
+        - public/app/uploads/
+        - public/wp/
+    ignoreErrors:
+      
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon

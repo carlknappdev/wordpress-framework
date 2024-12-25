@@ -1,0 +1,142 @@
+:focus {
+  outline: 0 !important;
+}
+
+html {
+  background: url('../images/bg-login.svg') no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+body.login {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background: inherit;
+}
+
+body.login #login a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #666 !important;
+}
+
+body.login #login a:hover {
+  color: #999 !important;
+}
+
+body.login #login {
+  width: auto;
+  height: 100vh;
+  padding: 60px 30px 30px;
+  background: #fff;
+}
+
+a:hover {
+  color: #fff !important;
+}
+
+body.login.staging h1::after {
+  content: 'Staging';
+  display: block;
+  background-color: red;
+  color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+body.login h1 a {
+  background: url('images/logo-itn.svg') 50% no-repeat transparent;
+  background-size: 113px;
+  width: 113px;
+  height: 113px;
+  margin: 0 auto;
+}
+
+body.login form#loginform {
+  padding: 30px;
+  margin-left: 0;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  background-color: #f4f4f4;
+}
+
+#login form p {
+  line-height: 24px;
+}
+
+form#loginform input[type='password'],
+form#loginform input[type='text'] {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border: 1px solid #999;
+  background: #f5f5f5;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.login .button-primary,
+form#loginform p.submit input[type='submit'] {
+  padding: 5px 10px;
+  margin-top: 4px;
+  background-color: #333;
+  border-radius: 5px;
+  border: 1px solid #000;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 1px 0 #000;
+  text-transform: uppercase;
+}
+
+.button-primary:hover {
+  background-color: #555 !important;
+}
+
+p#backtoblog {
+  display: none;
+}
+
+p#nav {
+  text-align: center;
+  text-shadow: none !important;
+}
+
+.message {
+  margin-top: 20px !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: center !important;
+  background-color: #f5f5f5 !important;
+  border-radius: 5px !important;
+}
+
+#lostpasswordform {
+  padding: 30px;
+  margin-left: 0;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: none;
+}
+
+@media (min-width: 769px) {
+  body.login {
+    padding: 100px 0;
+  }
+
+  body.login #login {
+    width: 480px !important;
+    height: auto;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  }
+}

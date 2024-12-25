@@ -1,0 +1,28 @@
+/* stylelint-disable at-rule-empty-line-before */
+@mixin bp($point) {
+  @if $point == 'wide' {
+    @media (min-width: $min-width-wide) {
+      @content;
+    }
+  } @else if $point == 'desk' {
+    @media (min-width: $min-width-desk) {
+      @content;
+    }
+  } @else if $point == 'lap' {
+    @media (min-width: $min-width-lap) {
+      @content;
+    }
+  } @else if $point == 'tab' {
+    @media (min-width: $min-width-tab) {
+      @content;
+    }
+  } @else if $point == 'mob' {
+    @media (max-width: $max-width-mob) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $point) {
+      @content;
+    }
+  }
+}
