@@ -1,0 +1,36 @@
+# Application
+public/app/cache/*
+public/app/languages/
+public/app/mu-plugins/*/
+public/app/plugins/*
+!public/app/plugins/.gitkeep
+public/app/themes/*
+!public/app/themes/theme
+public/app/themes/theme/dist/
+public/app/upgrade
+public/app/upgrade-temp-backup
+public/app/uploads/
+!public/app/uploads/.gitkeep
+
+# WordPress
+public/wp
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml
+
+# Node
+node_modules/
+
+#PHPStan
+phpstan-results.txt
